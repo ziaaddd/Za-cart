@@ -1,0 +1,69 @@
+.product {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+.productImg {
+  height: 350px;
+  width: 100%;
+  background-color: #f2f2f2;
+}
+
+.productImg img {
+  height: 100%;
+  width: 100%;
+  display: block;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.product h2 {
+  font-size: 16px;
+  margin-top: 9px;
+  margin-bottom: 12px;
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+}
+.product h3 {
+  font-size: 14px;
+}
+.maximumNotice {
+  font-size: 12px;
+  margin-bottom: 7px;
+}
+.wishListBtn {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+}
+.wishListBtn svg {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.wishListBtn svg:hover {
+  transform: scale(1.1);
+}
+.ModalBtn {
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: #0dcaf0;
+  color: white;
+  text-decoration: none;
+  width: 70px;
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  transition: 0.3s;
+  text-align: center;
+}
+.ModalBtn:hover {
+  background-color: #0dcaf0c7;
+}

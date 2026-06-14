@@ -1,0 +1,31 @@
+.stepCircle {
+  width: 36px;
+  height: 36px;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.stepLine {
+  width: 64px;
+  height: 2px;
+  margin: 0 8px;
+  margin-bottom: 22px;
+  flex-shrink: 0;
+}
+
+.stepper {
+  gap: 0;
+}
+
+@media (max-width: 480px) {
+  .stepLine {
+    width: 32px;
+    margin: 0 4px;
+    margin-bottom: 22px;
+  }
+  .stepCircle {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+}

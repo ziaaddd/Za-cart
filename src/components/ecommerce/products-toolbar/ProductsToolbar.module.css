@@ -1,0 +1,63 @@
+/* ── Toolbar container ────────────────────────────────────────────────────── */
+.toolbar {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 28px;
+}
+
+/* ── Shared label style ───────────────────────────────────────────────────── */
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 5px;
+}
+
+/* ── Search input — remove the default focus outline and add our own ──────── */
+.searchInput:focus {
+  border-color: #0dcaf0;
+  box-shadow: 0 0 0 0.2rem rgba(13, 202, 240, 0.2);
+}
+
+.inputIcon {
+  background: white;
+  border-right: none;
+  font-size: 14px;
+  padding: 0 10px;
+}
+
+/* make the search control connect to the icon without double border */
+.searchInput {
+  border-left: none;
+}
+
+.priceInput:focus {
+  border-color: #0dcaf0;
+  box-shadow: 0 0 0 0.2rem rgba(13, 202, 240, 0.2);
+}
+
+/* ── Reset button ─────────────────────────────────────────────────────────── */
+.resetBtn {
+  background-color: #0dcaf0 !important;
+  border-color: #0dcaf0 !important;
+  width: 100%;
+  white-space: nowrap;
+  font-size: 13px;
+  transition: all 0.3s;
+}
+.resetBtn:hover {
+  background-color: #0dcaf0cb !important;
+  border-color: #0dcaf0cb !important;
+  color: white !important;
+}
+
+/* ── Mobile: stack everything ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .toolbar {
+    padding: 14px;
+  }
+}

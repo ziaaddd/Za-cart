@@ -1,0 +1,49 @@
+.basketContainer {
+  position: relative;
+  cursor: pointer;
+  align-self: flex-end;
+  transition: 0.3s;
+}
+
+.animationBehavior {
+  animation: rotateAnimate 0.5s 1 ease-in-out;
+}
+@keyframes rotateAnimate {
+  0% {
+    transform: rotate(-30deg) scale(0.9);
+  }
+  25% {
+    transform: rotate(-20deg) scale(1.1);
+  }
+  50% {
+    transform: rotate(-40deg) scale(1.15);
+  }
+  75% {
+    transform: rotate(-25deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(-30deg) scale(1);
+  }
+}
+
+.basketContainer:hover {
+  transform: rotate(-30deg) scale(1.1);
+}
+.basketQuantity {
+  position: absolute;
+  top: -11px;
+  right: -5px;
+  text-align: center;
+  height: 20px;
+  width: 20px;
+  background-color: #0dcaf0;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,40 @@
+.headerContainer {
+  padding: 10px 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.iconscontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.brand {
+  position: relative;
+}
+.basket {
+  position: absolute;
+  top: -15%;
+  right: -7%;
+  rotate: 30deg;
+}
+
+.headerLogo {
+  color: inherit;
+  text-decoration: inherit;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.headerLogo h1 {
+  margin: 0;
+  display: flex;
+}
+.headerLogo h1 span {
+  display: block;
+  margin-right: 5px;
+}
+.secondHeader {
+  background: linear-gradient(135deg, #0f0f1a 0%, #0d2a3a 60%, #0c3547 100%);
+}

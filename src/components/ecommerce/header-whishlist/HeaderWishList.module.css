@@ -1,0 +1,16 @@
+.wishlist {
+  font-weight: 600;
+  border-left: 1px solid rgba(0, 0, 0, 0.797);
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+.wishlist svg {
+  width: 40px;
+  height: 50px;
+  padding-left: 5px;
+  transition: 0.3s;
+}
+.wishlist:hover svg {
+  transform: scale(1.1);
+}

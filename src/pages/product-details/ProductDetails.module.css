@@ -1,0 +1,25 @@
+/* Product image container — light background so transparent PNGs look clean */
+.imageWrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+  max-height: 480px;
+}
+
+/* Fixed-size wishlist heart button */
+.heartBtn {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+/* SVG icon inside the heart button — sized via className, not inline style */
+/* This avoids the TypeScript warning about SVGProps not accepting style */
+.heartIcon {
+  width: 40px;
+  height: 40px;
+}
