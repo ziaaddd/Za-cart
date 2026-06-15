@@ -8,8 +8,6 @@ Za-Cart is an online shopping platform that allows users to browse products, exp
 
 The project follows modern React development practices including code splitting, state management with Redux Toolkit, form validation, protected routes, and cloud-based backend services.
 
----
-
 ## Features
 
 ### Customer Features
@@ -112,7 +110,7 @@ src/
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repository-url>
+git clone <https://github.com/ziaaddd/Za-cart.git>
 cd Za-cart
 ```
 
