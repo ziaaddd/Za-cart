@@ -142,6 +142,28 @@ Supabase Sync
 ▼
 Checkout
 
+## Screenshots
+
+## Home Page
+
+![Home](./public/screenshots/home.png)
+
+# Products Page
+
+![Products](./public/screenshots/products.png)
+
+## Cart Page
+
+![Cart](./public/screenshots/cart.png)
+
+## Orders Page
+
+![Login](./public/screenshots/orders.png)
+
+## Login Page
+
+![Login](./public/screenshots/login.png)
+
 ## Getting Started
 
 ### 1. Clone the repository
