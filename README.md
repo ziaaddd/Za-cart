@@ -1,73 +1,185 @@
-# React + TypeScript + Vite
+# Za-Cart 🛒
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern full-stack e-commerce application built with React, TypeScript, Redux Toolkit, and Supabase.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Za-Cart is an online shopping platform that allows users to browse products, explore categories, manage their cart and wishlist, authenticate securely, and place orders through a clean and responsive user interface.
 
-## React Compiler
+The project follows modern React development practices including code splitting, state management with Redux Toolkit, form validation, protected routes, and cloud-based backend services.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Customer Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Browse products by category
+- Product details page
+- Featured products section
+- Shopping cart management
+- Wishlist functionality
+- User registration and login
+- Protected user routes
+- Checkout process
+- Orders history
+- User profile page
+- Responsive design
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### User Experience
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Lazy loading and code splitting
+- Loading skeletons and animations
+- Error handling pages
+- Toast notifications
+- Modern responsive UI with Bootstrap
+
+---
+
+## Tech Stack
+
+### Frontend
+
+- React 18
+- TypeScript
+- Vite
+- React Router
+- React Bootstrap
+- CSS Modules
+
+### State Management
+
+- Redux Toolkit
+- React Redux
+- Redux Persist
+
+### Forms & Validation
+
+- React Hook Form
+- Zod
+- Hook Form Resolvers
+
+### Backend & Database
+
+- Supabase
+
+### Additional Libraries
+
+- Axios
+- Lottie React
+- React Hot Toast
+
+---
+
+## Project Structure
+
+```text
+src/
+│
+├── components/
+│   ├── auth/
+│   ├── common/
+│   ├── ecommerce/
+│   └── feedback/
+│
+├── layouts/
+│
+├── pages/
+│   ├── Home
+│   ├── Categories
+│   ├── Products
+│   ├── Product Details
+│   ├── Cart
+│   ├── Wishlist
+│   ├── Checkout
+│   ├── Orders
+│   ├── Profile
+│   ├── Login
+│   └── Register
+│
+├── services/
+│   └── supabase.ts
+│
+├── store/
+│
+└── scripts/
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Getting Started
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1. Clone the repository
+
+```bash
+git clone <your-repository-url>
+cd Za-cart
 ```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure environment variables
+
+Create a `.env` file in the project root:
+
+```env
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+### 4. Run the development server
+
+```bash
+npm run dev
+```
+
+### 5. Build for production
+
+```bash
+npm run build
+```
+
+---
+
+## Available Scripts
+
+```bash
+npm run dev      # Start development server
+npm run build    # Create production build
+npm run lint     # Run ESLint
+npm run preview  # Preview production build
+npm run seed     # Seed database
+```
+
+---
+
+## Architecture Highlights
+
+- Feature-based folder organization
+- Redux Toolkit for scalable state management
+- Route protection for authenticated pages
+- Reusable UI components
+- Service layer for Supabase integration
+- Lazy-loaded pages for performance optimization
+
+---
+
+## Future Improvements
+
+- Payment gateway integration
+- Product search and filtering
+- Admin dashboard
+- Product reviews and ratings
+- Order tracking
+- Multi-language support
+- Dark mode
+
+---
+
+## Author
+
+Developed as a portfolio-ready e-commerce application showcasing modern React and TypeScript development practices.
