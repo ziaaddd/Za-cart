@@ -10,19 +10,28 @@ The project follows modern React development practices including code splitting,
 
 ## Features
 
-### Customer Features
-
-- Browse products by category
-- Product details page
-- Featured products section
-- Shopping cart management
-- Wishlist functionality
-- User registration and login
-- Protected user routes
-- Checkout process
-- Orders history
-- User profile page
-- Responsive design
+Authentication
+User Registration
+User Login
+Secure Authentication using Supabase
+Protected Routes
+Persistent User Session
+Shopping Experience
+Product Catalog
+Category Browsing
+Product Details Page
+Shopping Cart
+Wishlist
+Checkout Flow
+User Dashboard
+Orders History
+User Profile
+Account Management
+Performance
+Code Splitting
+Lazy Loading
+Optimized State Management
+Responsive Design
 
 ### User Experience
 
@@ -105,12 +114,40 @@ src/
 
 ---
 
+## Application Flow
+
+Authentication Flow
+Register/Login
+│
+▼
+Supabase Auth
+│
+▼
+Redux Store
+│
+▼
+Protected Routes
+Cart Flow
+Product
+│
+▼
+Add To Cart
+│
+▼
+Redux State
+│
+▼
+Supabase Sync
+│
+▼
+Checkout
+
 ## Getting Started
 
 ### 1. Clone the repository
 
 ```bash
-git clone <https://github.com/ziaaddd/Za-cart.git>
+git clone https://github.com/ziaaddd/Za-cart.git
 cd Za-cart
 ```
 
@@ -174,10 +211,12 @@ npm run seed     # Seed database
 - Product reviews and ratings
 - Order tracking
 - Multi-language support
-- Dark mode
 
 ---
 
 ## Author
 
-Developed as a portfolio-ready e-commerce application showcasing modern React and TypeScript development practices.
+Developed by Ziad Shaban
+Computer Science Graduate | Frontend Developer | Future Full-Stack Developer
+
+Feel free to connect and provide feedback.
