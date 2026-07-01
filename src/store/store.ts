@@ -5,6 +5,7 @@ import cart from "./cart/CartSlice";
 import wishlist from "./wishlist/WishListSlice";
 import auth from "./auth/AuthSlice";
 import orders from "./orders/OrdersSlice";
+import payment from "./payment/PaymentSlice";
 
 const rootReducer = combineReducers({
   categories,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   wishlist,
   auth,
   orders,
+  payment,
 });
 
 const store = configureStore({

@@ -18,6 +18,7 @@ import actUpdateProfile from "../store/auth/actUpdateProfile";
 import { resetUpdateStatus } from "../store/auth/AuthSlice";
 import actGetOrders from "../store/orders/actGetOrders";
 import type { TorderStatus } from "../types/orders";
+import { showSuccess } from "../utilits/toast";
 
 const profileSchema = z
   .object({
@@ -92,6 +93,7 @@ function Profile() {
     )
       .unwrap()
       .then(() => {
+        showSuccess("Profile updated successfully");
         setEditMode(false);
         setShowPasswordFields(false);
         reset({
@@ -124,7 +126,7 @@ function Profile() {
       </h2>
       <Row className="g-4">
         <Col xs={12} md={7}>
-          <div className="border rounded-3 p-4 bg-white mb-4">
+          <div className="border rounded-3 p-4 mb-4">
             <div className="d-flex align-items-center gap-4 mb-4">
               <div
                 className="rounded-circle bg-info d-flex align-items-center justify-content-center flex-shrink-0 text-white fw-bold"
@@ -138,7 +140,7 @@ function Profile() {
                   {user?.firstName} {user?.lastName}
                 </h5>
                 <p className="text-muted mb-1 small">{user?.email}</p>
-                <span className="badge bg-light text-muted border small">
+                <span className="badge  text-muted border small">
                   Za-Cart member
                 </span>
               </div>
@@ -173,7 +175,7 @@ function Profile() {
           </div>
 
           {editMode && (
-            <div className="border rounded-3 p-4 bg-white">
+            <div className="border rounded-3 p-4">
               <h6 className="fw-bold mb-4 text-info">Edit profile</h6>
 
               {updateStatus === "succeeded" && (
@@ -303,7 +305,7 @@ function Profile() {
         </Col>
 
         <Col xs={12} md={5}>
-          <div className="border rounded-3 p-4 bg-white h-100">
+          <div className="border rounded-3 p-4 h-100">
             <div className="d-flex justify-content-between align-items-center mb-3">
               <h6 className="fw-bold mb-0">Recent orders</h6>
               {orders.length > 3 && (

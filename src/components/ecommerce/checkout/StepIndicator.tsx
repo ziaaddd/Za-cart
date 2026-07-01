@@ -21,9 +21,14 @@ const StepIndicator = ({ currentStep }: IStepIndicatorProps) => (
                 "rounded-circle d-flex align-items-center justify-content-center fw-bold",
                 isDone ? "bg-success text-white" : "",
                 isActive ? "bg-info text-white" : "",
-                !isDone && !isActive ? "bg-light text-muted border" : "",
+                !isDone && !isActive ? " text-muted border" : "",
                 styles.stepCircle,
               ].join(" ")}
+              style={
+                !isDone && !isActive
+                  ? { background: "var(--bs-secondary-bg)" }
+                  : undefined
+              }
             >
               {isDone ? "✓" : i + 1}
             </div>
@@ -35,7 +40,12 @@ const StepIndicator = ({ currentStep }: IStepIndicatorProps) => (
           </div>
           {i < STEPS.length - 1 && (
             <div
-              className={`${styles.stepLine} ${isDone ? "bg-success" : "bg-light border-top"}`}
+              className={styles.stepLine}
+              style={{
+                background: isDone
+                  ? "var(--bs-success)"
+                  : "var(--bs-border-color)",
+              }}
             />
           )}
         </div>

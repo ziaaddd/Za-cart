@@ -8,7 +8,7 @@ function Category({ id, name, image }: Tcategory) {
     <div className={` ${category}`}>
       <Link to={`/categories/products/${id}`}>
         <div className={categoryImg}>
-          <img src={image} alt={name} />
+          <img src={image} alt={name} loading="lazy" />
         </div>
         <h4 className={categoryTitle}>{name}</h4>
       </Link>

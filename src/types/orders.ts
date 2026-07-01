@@ -3,10 +3,12 @@ export type TorderItem = {
   name: string;
   image: string;
   order_id: number;
-  prosuct_id: number;
+  product_id: number;
   price: number;
   quantity: number;
 };
+
+export type TpaymentStatus = "unpaid" | "paid" | "refunded" | "failed";
 
 export type Torders = {
   id: string;
@@ -14,6 +16,8 @@ export type Torders = {
   total_price: number;
   orderItems: TorderItem[];
   status: TorderStatus;
+  payment_status: TpaymentStatus;
+  stripe_session_id: string | null;
   shipping_address: {
     fullName: string;
     phone: string;

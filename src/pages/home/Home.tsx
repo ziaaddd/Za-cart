@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from "react";
-import { Link } from "react-router-dom";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Link, NavLink } from "react-router-dom";
+import { Container, Row, Col } from "react-bootstrap";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import fetchCategories from "../../store/categories/actCategories";
 import fetchFeaturedProducts from "../../store/products/actFeaturedProducts";
@@ -24,6 +24,7 @@ const {
   sectionLink,
   categoryRow,
   productRow,
+  catBtn,
 } = styles;
 
 function Home() {
@@ -79,19 +80,9 @@ function Home() {
             electronics to fashion, all in one place.
           </p>
           <div className={heroCta}>
-            <Button
-              as={Link as React.ElementType}
-              to="/categories"
-              size="lg"
-              style={{
-                backgroundColor: "#0dcaf0",
-                border: "none",
-                color: "#fff",
-                fontWeight: 600,
-              }}
-            >
+            <NavLink to="/categories" className={catBtn}>
               Shop now
-            </Button>
+            </NavLink>
             <Link
               to="/about-us"
               style={{

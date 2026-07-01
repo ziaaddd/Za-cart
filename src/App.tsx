@@ -1,5 +1,7 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ProtectedRoutes from "./components/auth/ProtectedRoutes";
+import LottiesHandler from "./components/feedback/lotties/LottiesHandler";
 
 const MainLayout = lazy(() => import("./layouts/mainLayout/MainLayout"));
 const Home = lazy(() => import("./pages/home/Home"));
@@ -16,10 +18,22 @@ const ProductDetail = lazy(
   () => import("./pages/product-details/ProductDetail"),
 );
 const Checkout = lazy(() => import("./pages/checkout/Checkout"));
+const PaymentSuccess = lazy(() => import("./pages/checkout/PaymentSuccess"));
+const PaymentCancel = lazy(() => import("./pages/checkout/PaymentCancel"));
 const Orders = lazy(() => import("./pages/orders/Orders"));
 
-import ProtectedRoutes from "./components/auth/ProtectedRoutes";
-import LottiesHandler from "./components/feedback/lotties/LottiesHandler";
+const fallbackPage = (
+  <div
+    className="d-flex justify-content-center align-items-center"
+    style={{ minHeight: "40vh" }}
+  >
+    <LottiesHandler type="loading" />
+  </div>
+);
+
+const withSuspense = (element: React.ReactNode) => (
+  <Suspense fallback={fallbackPage}>{element}</Suspense>
+);
 
 const routes = createBrowserRouter([
   {
@@ -27,146 +41,57 @@ const routes = createBrowserRouter([
     element: <MainLayout />,
     errorElement: <ErrorPage />,
     children: [
-      {
-        index: true,
-        element: (
-          <Suspense
-            fallback={<LottiesHandler type="loading" message="Loading..." />}
-          >
-            <Home />,
-          </Suspense>
-        ),
-      },
-      {
-        path: "categories",
-        element: (
-          <Suspense
-            fallback={<LottiesHandler type="loading" message="Loading..." />}
-          >
-            <Categories />
-          </Suspense>
-        ),
-      },
-
+      { index: true, element: withSuspense(<Home />) },
+      { path: "categories", element: withSuspense(<Categories />) },
       {
         path: "categories/products/:categoryId",
-        element: (
-          <Suspense
-            fallback={<LottiesHandler type="loading" message="Loading..." />}
-          >
-            <Products />
-          </Suspense>
-        ),
+        element: withSuspense(<Products />),
       },
       {
         path: "categories/products/:categoryId/:productId",
-        element: (
-          <Suspense
-            fallback={<LottiesHandler type="loading" message="Loading..." />}
-          >
-            <ProductDetail />
-          </Suspense>
-        ),
+        element: withSuspense(<ProductDetail />),
       },
-
-      {
-        path: "cart",
-        element: (
-          <Suspense
-            fallback={<LottiesHandler type="loading" message="Loading..." />}
-          >
-            <Cart />
-          </Suspense>
-        ),
-      },
+      { path: "cart", element: withSuspense(<Cart />) },
       {
         path: "checkout",
-        element: (
-          <Suspense
-            fallback={<LottiesHandler type="loading" message="Loading..." />}
-          >
-            <ProtectedRoutes>
-              <Checkout />
-            </ProtectedRoutes>
-          </Suspense>
+        element: withSuspense(
+          <ProtectedRoutes>{withSuspense(<Checkout />)}</ProtectedRoutes>,
+        ),
+      },
+      {
+        path: "checkout/success",
+        element: withSuspense(
+          <ProtectedRoutes>{withSuspense(<PaymentSuccess />)}</ProtectedRoutes>,
+        ),
+      },
+      {
+        path: "checkout/cancel",
+        element: withSuspense(
+          <ProtectedRoutes>{withSuspense(<PaymentCancel />)}</ProtectedRoutes>,
         ),
       },
       {
         path: "orders",
-        element: (
-          <Suspense
-            fallback={<LottiesHandler type="loading" message="Loading..." />}
-          >
-            <ProtectedRoutes>
-              <Orders />
-            </ProtectedRoutes>
-          </Suspense>
+        element: withSuspense(
+          <ProtectedRoutes>{withSuspense(<Orders />)}</ProtectedRoutes>,
         ),
       },
-      {
-        path: "about-us",
-        element: (
-          <Suspense
-            fallback={<LottiesHandler type="loading" message="Loading..." />}
-          >
-            <AboutUs />
-          </Suspense>
-        ),
-      },
+      { path: "about-us", element: withSuspense(<AboutUs />) },
       {
         path: "wishlist",
-        element: (
-          <Suspense
-            fallback={<LottiesHandler type="loading" message="Loading..." />}
-          >
-            <ProtectedRoutes>
-              <Wishlist />
-            </ProtectedRoutes>
-          </Suspense>
+        element: withSuspense(
+          <ProtectedRoutes>{withSuspense(<Wishlist />)}</ProtectedRoutes>,
         ),
       },
-      {
-        path: "register",
-        element: (
-          <Suspense
-            fallback={<LottiesHandler type="loading" message="Loading..." />}
-          >
-            <Register />
-          </Suspense>
-        ),
-      },
-      {
-        path: "login",
-        element: (
-          <Suspense
-            fallback={<LottiesHandler type="loading" message="Loading..." />}
-          >
-            <LogIn />
-          </Suspense>
-        ),
-      },
+      { path: "register", element: withSuspense(<Register />) },
+      { path: "login", element: withSuspense(<LogIn />) },
       {
         path: "profile",
-        element: (
-          <Suspense
-            fallback={<LottiesHandler type="loading" message="Loading..." />}
-          >
-            <ProtectedRoutes>
-              <Profile />
-            </ProtectedRoutes>
-          </Suspense>
+        element: withSuspense(
+          <ProtectedRoutes>{withSuspense(<Profile />)}</ProtectedRoutes>,
         ),
       },
-      {
-        path: "*",
-        element: (
-          <Suspense
-            fallback={<LottiesHandler type="loading" message="Loading..." />}
-          >
-            <ErrorPage />
-          </Suspense>
-        ),
-      },
+      { path: "*", element: withSuspense(<ErrorPage />) },
     ],
   },
 ]);

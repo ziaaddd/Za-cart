@@ -1,17 +1,19 @@
 .categoryImg {
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   overflow: hidden;
   border-radius: 50%;
   background-color: #f2f2f2;
 }
 .categoryImg img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .category a {
   text-decoration: none;
-  color: black;
+  color: inherit;
 }
 
 .category a:hover {
@@ -19,7 +21,7 @@
   font-weight: 700;
 }
 .category h4 {
-  transition: t 0.3s;
+  transition: 0.3s;
 }
 
 .category h4:hover {

@@ -1,8 +1,6 @@
 .footerContainer {
-  margin-top: auto;
-  text-align: center;
-  padding: 10px 0;
-  border-top: 1px solid black;
+  border-top: 1px solid var(--bs-border-color);
+  background: var(--bs-tertiary-bg);
 }
 .footerContainer span {
   color: #0dcaf0;

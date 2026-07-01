@@ -64,7 +64,7 @@
   align-items: baseline;
   justify-content: space-between;
   margin-bottom: 24px;
-  border-bottom: 1px solid #e9ecef;
+  border-bottom: 1px solid var(--bs-border-color);
   padding-bottom: 12px;
 }
 
@@ -87,15 +87,15 @@
   opacity: 0.75;
   color: #0dcaf0;
 }
-
-.categoryRow {
-  /* nothing special — just a named hook for potential overrides */
+.catBtn {
+  background-color: #0dcaf0;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 5px 15px;
+  text-decoration: none;
+  border-radius: 7px;
 }
-
-.productRow {
-  /* nothing special — inherits Bootstrap Row behaviour */
-}
-
 @media (max-width: 576px) {
   .hero {
     padding: 56px 16px 52px;

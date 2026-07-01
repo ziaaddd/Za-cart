@@ -185,6 +185,7 @@ function ProductDetail() {
               <img
                 src={productDetail.image}
                 alt={productDetail.name}
+                loading="lazy"
                 className="img-fluid"
                 style={{ maxHeight: 460, objectFit: "contain", width: "100%" }}
               />
@@ -267,7 +268,7 @@ function ProductDetail() {
 
               {/* Wishlist heart */}
               <Button
-                variant={isLiked ? "" : "injfo"}
+                // variant={isLiked ? "" : "info"}
                 className={`p-2 d-flex align-items-center justify-content-center border ${styles.heartBtn}`}
                 onClick={handleLikeToggle}
                 title={isLiked ? "Remove from wishlist" : "Add to wishlist"}

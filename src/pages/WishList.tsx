@@ -8,8 +8,8 @@ import GridList from "../components/common/grid-list/GridList";
 import type { Tproduct } from "../types/product";
 import Heading from "../components/common/heading-title/Heading";
 import LoadingError from "../components/feedback/loading-error/LoadingError";
-import LottiesHandler from "../components/feedback/lotties/LottiesHandler";
-import { Link } from "react-router-dom";
+
+import WishlistRecommended from "../components/ecommerce/wishlist-recommended/WishlistRecommended";
 
 function Wishlist() {
   const dispatch = useAppDispatch();
@@ -47,15 +47,7 @@ function Wishlist() {
             renderItems={(item) => <Product {...item} />}
           />
         ) : (
-          <div style={{ textAlign: "center", fontSize: "25px" }}>
-            <LottiesHandler
-              type="emptywish"
-              // message="Your Wish-List Is Empty"
-            />
-            <Link to="/categories" style={{ color: "#0dcaf0" }}>
-              Add To Wish-List
-            </Link>
-          </div>
+          <WishlistRecommended />
         )}
       </LoadingError>
     </Container>

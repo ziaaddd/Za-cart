@@ -28,7 +28,7 @@ const HeaderBasket = () => {
 
   return (
     <div
-      className={`${basketContainer} ${updateQuantity ? styles.animationBehavior : ""}`}
+      className={`${basketContainer} ${updateQuantity ? styles.animationBehavior : ""} border-0 bg-transparent p-0`}
       onClick={() => navigate("cart")}
     >
       <Cart title="basket icon" className={basket} />

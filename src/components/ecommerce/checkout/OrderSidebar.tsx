@@ -19,10 +19,7 @@ function OrderSidebar({
   coupon,
 }: IProps) {
   return (
-    <div
-      className="border rounded-3 p-4 bg-light position-sticky"
-      style={{ top: 16 }}
-    >
+    <div className="border rounded-3 p-4  position-sticky" style={{ top: 16 }}>
       <h6 className="fw-bold mb-3">Order summary</h6>
 
       {isLoading ? (

@@ -10,9 +10,10 @@ const PasswordInput = forwardRef<HTMLInputElement, Props>((props, ref) => {
     <InputGroup hasValidation>
       <Form.Control {...props} ref={ref} type={visible ? "text" : "password"} />
       <Button
-        variant="outline-info"
+        variant="outline-secondary"
         onClick={() => setVisible((v) => !v)}
         tabIndex={-1}
+        type="button"
       >
         {visible ? "🙈" : "👁️"}
       </Button>

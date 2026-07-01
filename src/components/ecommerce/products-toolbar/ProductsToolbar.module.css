@@ -1,23 +1,20 @@
-/* ── Toolbar container ────────────────────────────────────────────────────── */
 .toolbar {
-  background: #f8f9fa;
-  border: 1px solid #e9ecef;
+  background: var(--bs-tertiary-bg);
+  border: 1px solid var(--bs-border-color);
   border-radius: 12px;
   padding: 16px 20px;
   margin-bottom: 28px;
 }
 
-/* ── Shared label style ───────────────────────────────────────────────────── */
 .label {
   font-size: 12px;
   font-weight: 600;
-  color: #6c757d;
+  color: var(--bs-secondary-color);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 5px;
 }
 
-/* ── Search input — remove the default focus outline and add our own ──────── */
 .searchInput:focus {
   border-color: #0dcaf0;
   box-shadow: 0 0 0 0.2rem rgba(13, 202, 240, 0.2);
@@ -30,7 +27,6 @@
   padding: 0 10px;
 }
 
-/* make the search control connect to the icon without double border */
 .searchInput {
   border-left: none;
 }
@@ -40,7 +36,6 @@
   box-shadow: 0 0 0 0.2rem rgba(13, 202, 240, 0.2);
 }
 
-/* ── Reset button ─────────────────────────────────────────────────────────── */
 .resetBtn {
   background-color: #0dcaf0 !important;
   border-color: #0dcaf0 !important;
@@ -55,7 +50,6 @@
   color: white !important;
 }
 
-/* ── Mobile: stack everything ─────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .toolbar {
     padding: 14px;

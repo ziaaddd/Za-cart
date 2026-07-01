@@ -35,6 +35,11 @@
   display: block;
   margin-right: 5px;
 }
-.secondHeader {
+
+[data-bs-theme="dark"] .secondHeader {
   background: linear-gradient(135deg, #0f0f1a 0%, #0d2a3a 60%, #0c3547 100%);
+}
+
+[data-bs-theme="light"] .secondHeader {
+  background: linear-gradient(135deg, #0c3547 0%, #0d7ea4 60%, #20c1e1 100%);
 }

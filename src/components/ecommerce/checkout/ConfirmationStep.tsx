@@ -17,8 +17,7 @@ function ConfirmationStep({ confirmedOrderId, shippingData }: Iprops) {
       <h4 className="fw-bold mt-2 mb-2">Order placed successfully!</h4>
       {confirmedOrderId && (
         <p className="text-muted small mb-1">
-          Order ID:{" "}
-          <span className="fw-semibold text-dark">{confirmedOrderId}</span>
+          Order ID: <span className="fw-semibold">{confirmedOrderId}</span>
         </p>
       )}
       {shippingData && (

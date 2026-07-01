@@ -11,13 +11,16 @@
 .productImg {
   height: 350px;
   width: 100%;
-  background-color: #f2f2f2;
+  background-color: var(--bs-tertiary-bg);
+  overflow: hidden;
+  border-radius: 5px;
 }
 
 .productImg img {
   height: 100%;
   width: 100%;
   display: block;
+  object-fit: cover;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
@@ -41,6 +44,7 @@
   position: absolute;
   top: 7px;
   right: 7px;
+  z-index: 1000;
 }
 .wishListBtn svg {
   width: 40px;

@@ -63,12 +63,11 @@ function LogIn() {
   if (token) {
     return <Navigate to="/" />;
   }
-
   return (
     <Container>
       <Row className="justify-content-center">
         <Col xs={12} md={8} lg={6}>
-          <div className="border rounded-3 p-4 p-md-5 bg-white">
+          <div className="border rounded-3 p-4 p-md-5 ">
             <h2
               className="fw-bold text-center mb-4"
               style={{ color: "#0dcaf0" }}
@@ -122,7 +121,7 @@ function LogIn() {
                     border: "none",
                   }}
                 >
-                  {isValidating ? "Logining..." : "Log In"}
+                  {isValidating ? "Logging in..." : "Log In"}
                 </Button>
               </Form.Group>
 
@@ -145,7 +144,7 @@ function LogIn() {
                     ? "Validating..."
                     : status === "pending"
                       ? "Loading..."
-                      : "Sing Up"}
+                      : "Sign Up"}
                 </Link>
               </p>
               {error && (

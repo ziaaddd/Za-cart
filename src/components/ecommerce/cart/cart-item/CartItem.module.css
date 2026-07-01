@@ -1,6 +1,5 @@
 .cartItem {
-  background-color: #fff;
-  border: 1px solid #e9ecef;
+  border: 1px solid var(--bs-border-color);
   border-radius: 12px;
   transition:
     transform 0.2s ease,
@@ -22,7 +21,7 @@
   align-items: center;
   overflow: hidden;
   border-radius: 12px;
-  background-color: #f8f9fa;
+  background-color: var(--bs-tertiary-bg);
 }
 
 .productImg img {

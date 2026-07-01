@@ -101,13 +101,18 @@ function Product({
           )}
         </div>
 
-        <Link
-          className={productImg}
-          to={detailUrl}
-          style={{ textDecoration: "none" }}
-        >
-          <img src={image} alt={name} />
-        </Link>
+        <div className={`${productImg} product-img-wrap position-relative`}>
+          <img src={image} alt={name} loading="lazy" />
+          <Link
+            className="product-overlay"
+            to={detailUrl}
+            style={{ textDecoration: "none" }}
+          >
+            {" "}
+            <span>View details</span>
+          </Link>
+        </div>
+
         <Link
           to={detailUrl}
           style={{ textDecoration: "none", color: "inherit" }}

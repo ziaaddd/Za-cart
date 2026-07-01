@@ -57,8 +57,8 @@ function Register() {
   return (
     <Container>
       <Row className="justify-content-center">
-        <Col mxs={12} md={8} lg={6}>
-          <div className="border rounded-3 p-4 p-md-5 bg-white">
+        <Col xs={12} md={8} lg={6}>
+          <div className="border rounded-3 p-4 p-md-5 ">
             <h2
               className="fw-bold text-center mb-4"
               style={{ color: "#0dcaf0" }}
@@ -177,20 +177,6 @@ function Register() {
                   log In
                 </Link>
               </p>
-              {error && (
-                <p
-                  style={{
-                    color: "#DC3545",
-                    marginTop: "10px",
-                    textAlign: "center",
-                    padding: "10px",
-                    backgroundColor: "#dc354633",
-                    borderRadius: "10px",
-                  }}
-                >
-                  {error}
-                </p>
-              )}
             </Form>
           </div>
         </Col>

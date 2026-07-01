@@ -57,7 +57,7 @@ function CartTotalPrice({ products }: Props) {
   return (
     <>
       {/*order summary card */}
-      <div className="border rounded-3 p-4 bg-light">
+      <div className="border rounded-3 p-4 ">
         <h5 className="fw-bold mb-4">Order summary</h5>
 
         <div className="d-flex flex-column gap-2 mb-2">

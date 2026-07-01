@@ -6,7 +6,6 @@ import {
   cleanUpCartFullInfo,
 } from "../store/cart/CartSlice";
 import CartListOfItems from "../components/ecommerce/cart/CartListOfItems";
-import Heading from "../components/common/heading-title/Heading";
 import CartTotalPrice from "../components/ecommerce/cart/cart-price/CartTotalPrice";
 import LoadingError from "../components/feedback/loading-error/LoadingError";
 import LottiesHandler from "../components/feedback/lotties/LottiesHandler";
@@ -58,14 +57,8 @@ function Cart() {
 
   return (
     <Container>
-      <h2 className="fw-bold mb-0" style={{ color: "#0dcaf0" }}>
+      <h2 className="fw-bold mb-3" style={{ color: "#0dcaf0" }}>
         Your cart
-        {/* {productsWithQuantity.length > 0 && (
-          <span className="fs-6 text-muted fw-normal ms-2">
-            ({productsWithQuantity.length} item
-            {productsWithQuantity.length !== 1 ? "s" : ""})
-          </span>
-        )} */}
       </h2>
       <LoadingError status={status} error={error} type="cart">
         {productsWithItsquantity.length ? (

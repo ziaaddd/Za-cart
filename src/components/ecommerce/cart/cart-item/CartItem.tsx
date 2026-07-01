@@ -43,13 +43,13 @@ const CartItem = ({
           to={`/categories/products/${category_id}/${id}`}
           className={productImg}
         >
-          <img src={image} alt={name} />
+          <img src={image} alt={name} loading="lazy" />
         </Link>
 
         <div>
           <Link
             to={`/categories/products/${category_id}/${id}`}
-            className="text-decoration-none text-dark fw-semibold fs-6 d-block mb-3"
+            className="text-decoration-none  fw-semibold fs-6 d-block mb-3"
           >
             {name}
           </Link>

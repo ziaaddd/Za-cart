@@ -13,8 +13,8 @@ interface IProps {
   discountAmount: number;
   coupon: string | null;
   orderError: string | null;
-  handlePlaceOrder: () => void;
-  orderStatus: string;
+  handlePay: () => void;
+  paymentStatus: string;
 }
 
 function ReviewStep({
@@ -27,8 +27,8 @@ function ReviewStep({
   discountAmount,
   coupon,
   orderError,
-  handlePlaceOrder,
-  orderStatus,
+  handlePay,
+  paymentStatus,
 }: IProps) {
   return (
     <div>
@@ -49,9 +49,7 @@ function ReviewStep({
         </div>
         {shippingData && (
           <div className="small text-muted lh-lg">
-            <p className="mb-0 text-dark fw-semibold">
-              {shippingData.fullName}
-            </p>
+            <p className="mb-0  fw-semibold">{shippingData.fullName}</p>
             <p className="mb-0">{shippingData.phone}</p>
             <p className="mb-0">{shippingData.address}</p>
             <p className="mb-0">
@@ -77,7 +75,8 @@ function ReviewStep({
                 <img
                   src={p.image}
                   alt={p.name}
-                  className="rounded-2 object-fit-contain bg-light flex-shrink-0"
+                  loading="lazy"
+                  className="rounded-2 object-fit-contai flex-shrink-0"
                   style={{ width: 56, height: 56 }}
                 />
                 <div className="flex-grow-1">
@@ -123,6 +122,14 @@ function ReviewStep({
         </Alert>
       )}
 
+      {/* Redirecting notice — shown while waiting for Stripe redirect */}
+      {paymentStatus == "pending" && (
+        <Alert variant="info" className="small py-2 mb-3">
+          <Spinner animation="border" size="sm" className="me-2" />
+          Connecting to Stripe… do not close this tab.
+        </Alert>
+      )}
+
       <div className="d-flex gap-3">
         <Button variant="outline-secondary" onClick={() => setCurrentStep(0)}>
           ← Edit address
@@ -130,19 +137,31 @@ function ReviewStep({
         <Button
           variant="info"
           className="text-white fw-bold px-4"
-          onClick={handlePlaceOrder}
-          disabled={orderStatus === "pending" || isLoading}
+          onClick={handlePay}
+          disabled={paymentStatus === "pending" || isLoading}
         >
-          {orderStatus === "pending" ? (
+          {paymentStatus === "pending" ? (
             <>
               <Spinner animation="border" size="sm" className="me-2" />
-              Placing order…
+              Redirecting…
             </>
           ) : (
-            "Place order"
+            <>🔒 Pay {total.toFixed(2)} EGP</>
           )}
         </Button>
       </div>
+      <p className="text-muted small mt-3 mb-0">
+        🔐 Payments are processed securely by{" "}
+        <a
+          href="https://stripe.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-info"
+        >
+          Stripe
+        </a>
+        . We never store your card details.
+      </p>
     </div>
   );
 }
