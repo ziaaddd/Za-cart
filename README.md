@@ -6,9 +6,7 @@ A full-stack e-commerce web application built with React 18, TypeScript, Redux T
 
 ## 🌐 Live Demo
 
-> Deploy to Vercel or Netlify and add your URL here.
-
----
+## https://za-cart-icot.vercel.app/
 
 ## 📋 Table of Contents
 
