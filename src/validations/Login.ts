@@ -2,6 +2,7 @@ import { z } from "zod";
 
 const logInSchema = z.object({
   email: z
+    .string()
     .email("Invalid Email Format")
     .min(1, { message: "Email address is required" }),
   password: z

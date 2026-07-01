@@ -5,6 +5,7 @@ const registerSchema = z
     firstName: z.string().min(1, { message: "First name is required" }),
     lastName: z.string().min(1, { message: "Last name is required" }),
     email: z
+      .string()
       .email("Invalid Email Format")
       .min(1, { message: "Email address is required" }),
     password: z
